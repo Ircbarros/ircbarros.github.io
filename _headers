@@ -1,0 +1,21 @@
+/*
+  # Block browsers from guessing content types (stops MIME-sniffing attacks)
+  X-Content-Type-Options: nosniff
+
+  # Deny framing by any origin (clickjacking protection)
+  X-Frame-Options: DENY
+
+  # Only send the bare origin as referrer when crossing to HTTPS
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Restrict powerful browser APIs — this site needs none of them
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+
+  # Content Security Policy
+  # - default: nothing unless listed below
+  # - scripts: only self (inline scripts in index.html are allowed via 'unsafe-inline')
+  # - styles: self + inline (site uses <style> blocks)
+  # - images: self + data URIs + CDN origins used for icons
+  # - fonts: self + Google Fonts (if ever added)
+  # - connect: block all XHR/fetch
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://cdn.simpleicons.org https://cdn.jsdelivr.net; font-src 'self'; connect-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'none';
