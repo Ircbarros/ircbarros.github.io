@@ -3,6 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Security headers (enforced client-side; _headers file covers server-side hosts) -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://cdn.simpleicons.org https://cdn.jsdelivr.net; connect-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'none';">
 <title>Italo Barros // Data & AI Architect</title>
 <meta name="description" content="Italo Barros — Data & AI Architect. Databricks Pro, GCP Certified. Building multi-cloud data platforms.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
