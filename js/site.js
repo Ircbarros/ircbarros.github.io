@@ -59,15 +59,81 @@
       setTimeout(() => window.spawnGlitter(glitter, 12), 2400);
       setTimeout(() => window.spawnGlitter(glitter, 8),  3400);
     }
-    // cyberpunk flicker loop — starts after assembly settles, fires randomly
-    function triggerFlicker() {
-      slot.classList.remove('flicker');
-      void slot.offsetWidth; // force reflow so animation restarts
-      slot.classList.add('flicker');
-      slot.addEventListener('animationend', () => slot.classList.remove('flicker'), { once: true });
-      setTimeout(triggerFlicker, 5000 + Math.random() * 9000);
+    // Cyberpunk 2077-style glitch: chromatic aberration ghost clones + slice displacement
+    function createGhost(color, dx) {
+      var svg = slot.querySelector('svg');
+      if (!svg) return null;
+      var clone = svg.cloneNode(true);
+      // Recolor all drawn elements to the ghost channel color
+      clone.querySelectorAll('[stroke]').forEach(function(el) {
+        if (el.getAttribute('stroke') !== 'none') el.setAttribute('stroke', color);
+      });
+      clone.querySelectorAll('[fill]').forEach(function(el) {
+        var f = el.getAttribute('fill');
+        if (f && f !== 'none' && f.indexOf('url') === -1) el.setAttribute('fill', color);
+      });
+      // Strip filters and IDs — avoid conflicts with the original SVG defs
+      clone.querySelectorAll('[filter]').forEach(function(el) { el.removeAttribute('filter'); });
+      clone.querySelectorAll('[id]').forEach(function(el)     { el.removeAttribute('id'); });
+      var defs = clone.querySelector('defs');
+      if (defs) defs.remove();
+      clone.style.cssText = 'width:100%;height:100%;overflow:visible;position:absolute;inset:0;';
+
+      var wrap = document.createElement('div');
+      wrap.style.cssText = 'position:absolute;inset:0;pointer-events:none;opacity:0;mix-blend-mode:screen;transform:translateX(' + dx + 'px);';
+      wrap.appendChild(clone);
+      stage.appendChild(wrap);
+      return wrap;
     }
-    setTimeout(triggerFlicker, firstVisit ? 3800 : 1800);
+
+    function runGlitch() {
+      var svg = slot.querySelector('svg');
+      if (!svg) { schedGlitch(); return; }
+
+      var red  = createGhost('#FF1E50', -11);
+      var cyan = createGhost('#00FFD0', 11);
+      if (!red || !cyan) { schedGlitch(); return; }
+
+      // Each frame: [delay_ms, main_transform, main_opacity, red_opacity, cyan_opacity]
+      var frames = [
+        [0,   'translateX(-8px) skewX(-4deg)', 1,    0.9,  0   ],
+        [40,  'translateX(11px)',              0.06, 0.95, 0.08],
+        [70,  'translateX(-10px) skewX(5deg)', 1,   0.05, 0.98],
+        [100, 'translateX(6px)',               0.5, 0.75, 0.15],
+        [125, 'none',                          1,   0.55, 0.5 ],
+        [155, 'translateX(-3px)',              0.15, 0.1, 0.12],
+        [180, 'none',                          1,   0,    0   ],
+        // second burst after a gap
+        [360, 'translateX(8px) skewX(3deg)',   0.75, 0.04, 0.85],
+        [390, 'none',                          0.04, 0.55, 0.1 ],
+        [415, 'translateX(-5px)',              1,   0.45, 0.35],
+        [445, 'none',                          1,   0,    0   ],
+      ];
+
+      frames.forEach(function(f) {
+        setTimeout(function() {
+          slot.style.transform = (f[1] === 'none') ? '' : f[1];
+          slot.style.opacity   = (f[2] === 1)      ? '' : f[2];
+          if (red)  red.style.opacity  = f[3];
+          if (cyan) cyan.style.opacity = f[4];
+        }, f[0]);
+      });
+
+      // cleanup
+      setTimeout(function() {
+        slot.style.transform = '';
+        slot.style.opacity   = '';
+        if (red)  red.remove();
+        if (cyan) cyan.remove();
+        schedGlitch();
+      }, 520);
+    }
+
+    function schedGlitch() {
+      setTimeout(runGlitch, 5000 + Math.random() * 8000);
+    }
+
+    setTimeout(runGlitch, firstVisit ? 4000 : 2000);
   }
 
   // mini mark in topbar
