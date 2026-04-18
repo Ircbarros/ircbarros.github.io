@@ -17,30 +17,30 @@
 
     // gcp
     { id: 'bigquery',      label: 'bigquery',       group: 'cloud', size: 22, icon: 'googlebigquery' },
-    { id: 'dataflow',      label: 'dataflow',       group: 'cloud', size: 22 },
-    { id: 'pubsub',        label: 'pubsub',         group: 'cloud', size: 22 },
-    { id: 'vertex',        label: 'vertex',         group: 'cloud', size: 22 },
+    { id: 'dataflow',      label: 'dataflow',       group: 'cloud', size: 22, icon: 'googledataflow' },
+    { id: 'pubsub',        label: 'pubsub',         group: 'cloud', size: 22, icon: 'googlepubsub' },
+    { id: 'vertex',        label: 'vertex',         group: 'cloud', size: 22, icon: 'googlevertexai' },
     { id: 'gke',           label: 'gke',            group: 'cloud', size: 22, icon: 'googlekubernetesengine' },
     { id: 'cloudfunctions',label: 'functions',      group: 'cloud', size: 22, icon: 'googlecloudfunctions' },
     { id: 'gcs',           label: 'gcs',            group: 'cloud', size: 22, icon: 'googlecloudstorage' },
 
     // azure
-    { id: 'adls',        label: 'adls',       group: 'cloud', size: 22 },
-    { id: 'datafactory', label: 'adf',        group: 'cloud', size: 22 },
-    { id: 'eventhub',    label: 'event hub',  group: 'cloud', size: 22 },
-    { id: 'iothub',      label: 'iot hub',    group: 'cloud', size: 22 },
+    { id: 'adls',        label: 'adls',       group: 'cloud', size: 22, icon: 'azuredatalakestorage' },
+    { id: 'datafactory', label: 'adf',        group: 'cloud', size: 22, icon: 'azuredatafactory' },
+    { id: 'eventhub',    label: 'event hub',  group: 'cloud', size: 22, icon: 'azureeventhubs' },
+    { id: 'iothub',      label: 'iot hub',    group: 'cloud', size: 22, icon: 'azureiotcentral' },
     { id: 'powerbi',     label: 'powerbi',    group: 'cloud', size: 22, icon: 'powerbi' },
-    { id: 'copilot',     label: 'copilot',    group: 'cloud', size: 22 },
+    { id: 'copilot',     label: 'copilot',    group: 'cloud', size: 22, icon: 'microsoftcopilot' },
 
     // data
     { id: 'databricks', label: 'databricks', group: 'data', size: 26, icon: 'databricks' },
     { id: 'spark',      label: 'spark',      group: 'data', size: 24, icon: 'apachespark' },
-    { id: 'delta',      label: 'delta',      group: 'data', size: 22 },
-    { id: 'unity',      label: 'unity cat',  group: 'data', size: 22 },
+    { id: 'delta',      label: 'delta',      group: 'data', size: 22, icon: 'deltalake' },
+    { id: 'unity',      label: 'unity cat',  group: 'data', size: 22, icon: 'databricks' },
     { id: 'dbt',        label: 'dbt',        group: 'data', size: 22, icon: 'dbt' },
     { id: 'airflow',    label: 'airflow',    group: 'data', size: 22, icon: 'apacheairflow' },
     { id: 'prefect',    label: 'prefect',    group: 'data', size: 22, icon: 'prefect' },
-    { id: 'sql',        label: 'sql',        group: 'data', size: 22 },
+    { id: 'sql',        label: 'sql',        group: 'data', size: 22, icon: 'postgresql' },
     { id: 'mongo',      label: 'mongo',      group: 'data', size: 22, icon: 'mongodb' },
 
     // ops
@@ -57,7 +57,7 @@
     { id: 'git',     label: 'git',     group: 'code', size: 22, icon: 'git' },
     { id: 'r',       label: 'R',       group: 'code', size: 22, icon: 'r' },
     { id: 'bash',    label: 'bash',    group: 'code', size: 22, icon: 'gnubash' },
-    { id: 'shell',   label: 'shell',   group: 'code', size: 22 },
+    { id: 'shell',   label: 'shell',   group: 'code', size: 22, icon: 'gnubash' },
     { id: 'cpp',     label: 'C++',     group: 'code', size: 22, icon: 'cplusplus' },
 
     // gov
@@ -72,7 +72,7 @@
     { id: 'genai',     label: 'genai',     group: 'ai', size: 22 },
     { id: 'mem0',      label: 'mem0',      group: 'ai', size: 22 },
     { id: 'qdrant',    label: 'qdrant',    group: 'ai', size: 22, icon: 'qdrant' },
-    { id: 'langfuse',  label: 'langfuse',  group: 'ai', size: 22 },
+    { id: 'langfuse',  label: 'langfuse',  group: 'ai', size: 22, icon: 'langchain' },
     { id: 'langchain', label: 'langchain', group: 'ai', size: 22, icon: 'langchain' },
   ];
 
@@ -98,10 +98,23 @@
     ['databricks','spark'],['databricks','delta'],['databricks','unity'],
     ['azure','databricks'],['gcp','databricks'],
     ['python','pandas'],['python','spark'],['python','airflow'],['python','prefect'],
+    ['python','langchain'],['python','qdrant'],['python','dbt'],['python','cloudfunctions'],
     ['k8s','otel'],['k8s','docker'],['terraform','k8s'],['terraform','ops'],
-    ['dbt','sql'],
+    ['terraform','gcp'],['terraform','azure'],
+    ['dbt','sql'],['dbt','databricks'],['dbt','bigquery'],
     ['copilot','ai'],['genai','llms'],['langchain','llms'],
     ['bash','shell'],
+    ['langchain','qdrant'],['langfuse','langchain'],['mem0','langchain'],
+    ['mem0','llms'],['qdrant','llms'],['claude','llms'],
+    ['vertex','llms'],['genai','vertex'],['genai','copilot'],
+    ['robotics','cpp'],['robotics','python'],
+    ['airflow','k8s'],
+    ['adls','databricks'],['adls','datafactory'],['eventhub','databricks'],
+    ['pubsub','dataflow'],['bigquery','dataflow'],
+    ['delta','adls'],['delta','gcs'],
+    ['mlops','databricks'],['mlops','python'],
+    ['nginx','k8s'],
+    ['spark','sql'],
   ];
 
   function hexPoints(size) {
@@ -201,14 +214,17 @@
         g.appendChild(img);
       }
 
-      const txt = document.createElementNS(NS, 'text');
-      txt.textContent = n.label;
-      // shift text down when there's an icon
-      if (n.icon && !n.me) {
-        const offset = n.hub ? 6 : 5;
-        txt.setAttribute('dy', offset);
+      // label: only show for me, hubs, or nodes without an icon
+      if (n.me || n.hub || !n.icon) {
+        const txt = document.createElementNS(NS, 'text');
+        txt.textContent = n.label;
+        // shift text down when there's an icon (hub nodes only reach here)
+        if (n.icon && !n.me) {
+          const offset = n.hub ? 6 : 5;
+          txt.setAttribute('dy', offset);
+        }
+        g.appendChild(txt);
       }
-      g.appendChild(txt);
 
       gNodes.appendChild(g);
       n.el = g;
@@ -252,13 +268,55 @@
       showInfo(null);
     }
     function lock(id) {
-      if (locked === id) { locked = null; clearHighlight(); return; }
-      locked = null; highlight(id); locked = id;
+      if (locked === id) { locked = null; clearHighlight(); resetFocus(); return; }
+      locked = null; highlight(id); locked = id; focusOn(id);
     }
 
     svgRoot.addEventListener('click', (e)=>{
-      if (e.target === svgRoot || e.target === gEdges) { locked = null; clearHighlight(); }
+      if (e.target === svgRoot || e.target === gEdges) { locked = null; clearHighlight(); resetFocus(); }
     });
+
+    // viewBox focus animation
+    let currentVB = [0, 0, W, H];
+    let targetVB  = [0, 0, W, H];
+    let vbRafId   = null;
+
+    function lerpVB() {
+      let done = true;
+      for (let i = 0; i < 4; i++) {
+        currentVB[i] += (targetVB[i] - currentVB[i]) * 0.12;
+        if (Math.abs(targetVB[i] - currentVB[i]) > 0.5) done = false;
+      }
+      svgRoot.setAttribute('viewBox', currentVB.map(v => v.toFixed(1)).join(' '));
+      if (!done) vbRafId = requestAnimationFrame(lerpVB);
+      else vbRafId = null;
+    }
+
+    function startVBLerp() {
+      if (vbRafId) cancelAnimationFrame(vbRafId);
+      vbRafId = requestAnimationFrame(lerpVB);
+    }
+
+    function focusOn(id) {
+      const adj = adjacentTo(id);
+      const nodes = NODES.filter(n => adj.has(n.id));
+      if (!nodes.length) return;
+      const pad = 80;
+      let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+      nodes.forEach(n => {
+        minX = Math.min(minX, n.x - n.size);
+        minY = Math.min(minY, n.y - n.size);
+        maxX = Math.max(maxX, n.x + n.size);
+        maxY = Math.max(maxY, n.y + n.size);
+      });
+      targetVB = [minX - pad, minY - pad, maxX - minX + pad * 2, maxY - minY + pad * 2];
+      startVBLerp();
+    }
+
+    function resetFocus() {
+      targetVB = [0, 0, W, H];
+      startVBLerp();
+    }
 
     // info panel content
     const META = {
@@ -270,27 +328,52 @@
       code:          { t: 'CODE · LANGUAGES', d: 'Python first, SQL everywhere', years: '8y', proj: 'daily' },
       gov:           { t: 'GOVERNANCE', d: 'DAMA, DataSecOps, MLOps', years: '3y', proj: 'tech-lead' },
       ai:            { t: 'AI · LLMs · GenAI', d: 'Adversarial AI research, LLM red-teaming', years: '3y', proj: 'PhD · NOVA IMS' },
-      databricks:    { t: 'DATABRICKS', d: 'Certified Professional — GB/TB Delta Sharing at ASML', years: 'daily', proj: 'ASML · Reckitt · BG' },
-      spark:         { t: 'PYSPARK', d: 'SQL→PySpark migration at Reckitt, hours→minutes', years: '5y', proj: 'ETL core' },
-      python:        { t: 'PYTHON', d: 'OOP, Airflow, Prefect, unit-tested', years: '6y', proj: 'primary' },
-      k8s:           { t: 'KUBERNETES', d: 'Centralised log platform @ ASML', years: '2y', proj: 'OTel + IoT Hub' },
-      terraform:     { t: 'TERRAFORM', d: 'IaC for multi-cloud deployments', years: '3y', proj: 'Devoteam' },
-      dbt:           { t: 'DBT', d: 'Certified fundamentals; modern data stack', years: '2y', proj: 'Reckitt · BG' },
-      genai:         { t: 'GENAI', d: 'GenAI Data Catalog @ Beyond Gravity (Copilot + GPT)', years: '2y', proj: 'shipped' },
-      mongo:         { t: 'MONGODB', d: 'Certified SI Associate + Architect', years: 'certified', proj: '2025' },
-      claude:        { t: 'ANTHROPIC CLAUDE', d: 'LLM eval and red-teaming', years: '1y', proj: 'PhD research' },
-      llms:          { t: 'LLMs', d: 'Large Language Models — adversarial evaluation', years: '2y', proj: 'research' },
-      qdrant:        { t: 'QDRANT', d: 'Vector DB for RAG pipelines', years: '1y', proj: 'AI stack' },
-      langchain:     { t: 'LANGCHAIN', d: 'RAG and agent orchestration', years: '1y', proj: 'AI stack' },
-      langfuse:      { t: 'LANGFUSE', d: 'LLM observability and tracing', years: '1y', proj: 'AI stack' },
-      mem0:          { t: 'MEM0', d: 'Memory layer for LLM agents', years: '1y', proj: 'AI stack' },
-      robotics:      { t: 'ROBOTICS', d: 'MAPF research — Swarm and Multi-Start metaheuristics', years: '2y', proj: 'UFPB · LARS 2019' },
-      ansible:       { t: 'ANSIBLE', d: 'Configuration management and automation', years: '2y', proj: 'ops' },
-      bash:          { t: 'BASH', d: 'Shell scripting and automation', years: '8y', proj: 'daily' },
-      r:             { t: 'R', d: 'Statistical analysis and data science', years: '3y', proj: 'research' },
-      cpp:           { t: 'C++', d: 'Robotics and systems programming', years: '3y', proj: 'UFPB' },
-      cloudfunctions:{ t: 'CLOUD FUNCTIONS', d: 'Serverless functions on GCP', years: '2y', proj: 'Devoteam' },
+      databricks:    { t: 'DATABRICKS', years: 'daily', proj: 'ASML · Reckitt · BG' },
+      spark:         { t: 'PYSPARK', years: 'daily', proj: 'daily' },
+      python:        { t: 'PYTHON', years: '6y', proj: 'primary' },
+      k8s:           { t: 'KUBERNETES', years: '1y', proj: 'ASML · homelab' },
+      terraform:     { t: 'TERRAFORM', years: '1y', proj: 'ASML · homelab' },
+      dbt:           { t: 'DBT', d: 'Certified fundamentals; modern data stack', years: '1y', proj: 'Reckitt' },
+      genai:         { t: 'GENAI', years: '2y', proj: 'daily · research' },
+      mongo:         { t: 'MONGODB', d: 'Certified SI Associate + Architect', years: 'certified', proj: 'Devoteam' },
+      claude:        { t: 'ANTHROPIC CLAUDE', years: '1y', proj: 'EPAM · homelab' },
+      llms:          { t: 'LLMs', years: '2y', proj: 'daily · research' },
+      qdrant:        { t: 'QDRANT', years: '1y', proj: 'homelab' },
+      langchain:     { t: 'LANGCHAIN', years: '1y', proj: 'homelab' },
+      langfuse:      { t: 'LANGFUSE', years: '1y', proj: 'homelab' },
+      mem0:          { t: 'MEM0', years: '1y', proj: 'homelab' },
+      robotics:      { t: 'ROBOTICS', years: '2y', proj: 'UFPB · LARS 2019' },
+      ansible:       { t: 'ANSIBLE', years: '—', proj: 'homelab' },
+      bash:          { t: 'BASH', years: '4y', proj: '—' },
+      r:             { t: 'R', years: '2y', proj: 'AES Brasil' },
+      cpp:           { t: 'C++', years: '2y', proj: '—' },
+      cloudfunctions:{ t: 'CLOUD FUNCTIONS', years: '2y', proj: 'Reckitt' },
       gcs:           { t: 'GOOGLE CLOUD STORAGE', d: 'Object storage for data lakes', years: '3y', proj: 'core' },
+      nginx:         { t: 'NGINX', years: '1y', proj: 'ASML' },
+      docker:        { t: 'DOCKER', years: '1y', proj: 'homelab' },
+      otel:          { t: 'OPENTELEMETRY', years: '1y', proj: 'ASML' },
+      shell:         { t: 'SHELL', years: '1y', proj: 'AES Brasil' },
+      git:           { t: 'GIT', years: '5y', proj: 'daily' },
+      pandas:        { t: 'PANDAS', years: '2y', proj: 'AES Brasil · AI ROBOTS' },
+      airflow:       { t: 'AIRFLOW', years: '1y', proj: 'Devoteam · AI ROBOTS' },
+      prefect:       { t: 'PREFECT', years: '1y', proj: 'AES Brasil' },
+      sql:           { t: 'SQL', years: '3y', proj: 'Reckitt · ASML' },
+      delta:         { t: 'DELTA LAKE', years: '5y', proj: 'daily' },
+      unity:         { t: 'UNITY CATALOG', years: '3y', proj: 'daily' },
+      gke:           { t: 'GKE', years: '1y', proj: 'ASML' },
+      iothub:        { t: 'IOT HUB', years: '1y', proj: 'AI ROBOTS' },
+      datafactory:   { t: 'AZURE DATA FACTORY', years: '2y', proj: 'Reckitt' },
+      adls:          { t: 'AZURE DATA LAKE STORAGE', years: '3y', proj: 'Reckitt · ASML' },
+      powerbi:       { t: 'POWER BI', years: '3y', proj: 'AES Brasil · Reckitt' },
+      eventhub:      { t: 'AZURE EVENT HUBS', years: '1y', proj: 'ASML' },
+      dataflow:      { t: 'GOOGLE DATAFLOW', years: '1y', proj: 'Devoteam' },
+      bigquery:      { t: 'BIGQUERY', years: '2y', proj: 'AES Brasil · Devoteam' },
+      vertex:        { t: 'VERTEX AI', years: '1y', proj: 'ASML' },
+      pubsub:        { t: 'GOOGLE PUB/SUB', years: '1y', proj: 'Devoteam' },
+      copilot:       { t: 'MICROSOFT COPILOT', years: '2y', proj: 'daily' },
+      mlops:         { t: 'MLOPS', d: 'ML lifecycle, model registry, retraining pipelines', years: '2y', proj: 'AES Brasil · BG' },
+      datasecops:    { t: 'DATASECOPS', d: 'Data security posture, shift-left governance', years: '2y', proj: 'ASML' },
+      dama:          { t: 'DAMA', d: 'Enterprise data governance framework', years: '2y', proj: 'BG · Reckitt' },
     };
     function showInfo(id) {
       if (!infoEl) return;
