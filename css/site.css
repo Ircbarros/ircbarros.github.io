@@ -559,6 +559,12 @@ section.block > .container > .section-head {
   font-family: var(--mono); font-size: 8px; color: var(--cyan-bright);
   letter-spacing: .2em; padding: 2px 5px; border: 1px solid var(--cyan);
 }
+.cert-logo {
+  width: 22px; height: 22px; display: block; margin-bottom: 10px;
+}
+.cert-logo-filter {
+  filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(135deg) brightness(0.85);
+}
 
 /* ————— research ————— */
 .research {
