@@ -245,22 +245,61 @@
     try { window.parent.postMessage({type:'__edit_mode_available'}, '*'); } catch(_){}
   }
 
-  // section title cyberpunk glitch — fires on scroll entry, then repeats
+  // section title cyberpunk glitch — JS-driven, identical engine to hero logo
   function initSectionTitleGlitch() {
     var h2s = document.querySelectorAll('.section-head .lead h2');
     if (!h2s.length) return;
 
     h2s.forEach(function(h2) {
-      h2.setAttribute('data-text', h2.textContent);
+      function createTextGhost(color, dx) {
+        var ghost = document.createElement('span');
+        ghost.textContent = h2.textContent; // plain text, single channel color
+        ghost.style.cssText = [
+          'position:absolute', 'top:0', 'left:0', 'width:100%',
+          'pointer-events:none', 'opacity:0', 'mix-blend-mode:screen',
+          'color:' + color, 'transform:translateX(' + dx + 'px)',
+          'font-size:inherit', 'font-family:inherit', 'font-weight:inherit',
+          'line-height:inherit', 'letter-spacing:inherit', 'white-space:normal'
+        ].join(';');
+        h2.appendChild(ghost);
+        return ghost;
+      }
 
       function runH2Glitch() {
-        h2.classList.remove('glitching');
-        void h2.offsetWidth; // force reflow so animation restarts cleanly
-        h2.classList.add('glitching');
+        var red  = createTextGhost('#FF1E50', -11);
+        var cyan = createTextGhost('#00FFD0',  11);
+
+        // identical frame table to the logo glitch
+        var frames = [
+          [0,   'translateX(-8px) skewX(-4deg)', 1,    0.9,  0   ],
+          [40,  'translateX(11px)',               0.06, 0.95, 0.08],
+          [70,  'translateX(-10px) skewX(5deg)',  1,    0.05, 0.98],
+          [100, 'translateX(6px)',                0.5,  0.75, 0.15],
+          [125, 'none',                           1,    0.55, 0.5 ],
+          [155, 'translateX(-3px)',               0.15, 0.1,  0.12],
+          [180, 'none',                           1,    0,    0   ],
+          [360, 'translateX(8px) skewX(3deg)',    0.75, 0.04, 0.85],
+          [390, 'none',                           0.04, 0.55, 0.1 ],
+          [415, 'translateX(-5px)',               1,    0.45, 0.35],
+          [445, 'none',                           1,    0,    0   ],
+        ];
+
+        frames.forEach(function(f) {
+          setTimeout(function() {
+            h2.style.transform  = (f[1] === 'none') ? '' : f[1];
+            h2.style.opacity    = (f[2] === 1)      ? '' : f[2];
+            red.style.opacity   = f[3];
+            cyan.style.opacity  = f[4];
+          }, f[0]);
+        });
+
         setTimeout(function() {
-          h2.classList.remove('glitching');
+          h2.style.transform = '';
+          h2.style.opacity   = '';
+          red.remove();
+          cyan.remove();
           setTimeout(runH2Glitch, 6000 + Math.random() * 9000);
-        }, 600);
+        }, 520);
       }
 
       // first glitch fires shortly after the section scrolls into view
