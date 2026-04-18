@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Italo Barros // Data & AI Architect</title>
+<meta name="description" content="Italo Barros — Data & AI Architect. Databricks Pro, GCP Certified. Building multi-cloud data platforms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<!-- boot / loader -->
+<div id="boot">
+  <div class="skip" id="boot-skip">[esc] skip &rsaquo;</div>
+  <div class="boot-inner">
+    <div class="lines"></div>
+    <div class="bar" style="--p:0%"></div>
+  </div>
+</div>
+
+<!-- scan lines (subtle) -->
+<div class="scan"></div>
+
+<!-- section transition flash -->
+<div id="flash"></div>
+
+<!-- topbar -->
+<header class="topbar">
+  <div class="logo-word">
+    <span class="mark"></span>
+    <span class="name">ITALO<span style="color:var(--cyan-bright)">.</span>BARROS</span>
+    <span class="dot"></span>
+  </div>
+  <nav>
+    <a href="#whoami"     data-sec data-screen-label="01 /whoami">/whoami</a>
+    <a href="#trajectory" data-sec data-screen-label="02 trajectory">trajectory</a>
+    <a href="#stack"      data-sec data-screen-label="03 /tech">/tech</a>
+    <a href="#projects"   data-sec data-screen-label="04 projects">projects</a>
+    <a href="#research"   data-sec data-screen-label="05 research">research</a>
+    <a href="#connect"    data-sec data-screen-label="06 /connect">/connect</a>
+  </nav>
+</header>
+
+<!-- fixed axes -->
+<div class="axes tl">[0,0]</div>
+<div class="axes tr">REV_001 · 2026</div>
+<div class="axes bl">LAT 40.5377° N · LON 07.2681° W · GUARDA · PT</div>
+<div class="axes br">SCALE 1:1 · SYSTEM ONLINE</div>
+
+<!-- ———————————————————————— HERO ———————————————————————— -->
+<section class="hero" data-screen-label="00 hero">
+  <div class="bp-layer"></div>
+  <div class="crosshair">
+    <div class="line vline" style="left:16.66%"></div>
+    <div class="line vline" style="left:50%; opacity:.18"></div>
+    <div class="line vline" style="left:83.33%"></div>
+    <div class="line hline" style="top:25%"></div>
+    <div class="line hline" style="top:75%"></div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="logo-stage">
+      <div class="glitter"></div>
+      <div class="logo-svg"></div>
+    </div>
+    <div class="role">&gt; NODE · 001 / DATA &amp; AI ARCHITECT</div>
+    <h1><span class="b">italo</span> <span class="glow">barros</span></h1>
+    <p class="tag">engineering systems that move petabytes · currently @ <span class="cyan">epam</span> \ <span class="cyan">asml</span></p>
+    <div class="cta-row">
+      <a class="btn primary" href="#whoami">enter <span class="arr">→</span></a>
+      <a class="btn" href="#connect">/connect</a>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>SCROLL</span>
+    <span class="bar"></span>
+  </div>
+</section>
+
+<!-- ———————————————————————— /WHOAMI ———————————————————————— -->
+<section id="whoami" class="block whoami" data-screen-label="01 /whoami">
+  <div class="container">
+    <div class="section-head">
+      <div class="lead">
+        <span class="kicker">01 · /whoami</span>
+        <h2>context <span class="slash">//</span> who's behind the terminal</h2>
+      </div>
+      <div class="meta">
+        <div class="hi">&gt; IDENTITY.VERIFIED</div>
+        <div>BASED · GUARDA · PT</div>
+        <div>REMOTE FIRST SINCE · 2020</div>
+      </div>
+    </div>
+
+    <div class="whoami-grid">
+      <div class="portrait-wrap bracket-card">
+        <div class="portrait">
+          <img src="assets/headshot.jpg" alt="Italo Barros">
+          <div class="portrait-scan"></div>
+        </div>
+        <div class="meta-under">
+          <div><b>PID</b> · 001</div>
+          <div><b>OS</b> · Parrot Security OS</div>
+          <div><b>MSC</b> · 2021</div>
+          <div><b>LANGS</b> · 4</div>
+          <div><b>CERTS</b> · 14</div>
+          <div><b>ROLES</b> · 7</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <h3>&gt; cat /about</h3>
+        <p>i design and build the architectures and pipelines that allows enterprises trust their data — from single to <span class="hl">multi-cloud scenarios</span> leveraging technologies such as delta sharing, governance frameworks, and security/vulnerability frameworks.</p>
+        <p>ongoing PhD. at <span class="hl">NOVA IMS</span>, Msc. in computer science from the Federal University of Paraíba, and five years across <span class="hl">AES Brasil</span> (energy), <span class="hl">Reckitt Benckiser</span> (retail), <span class="hl">Beyond Gravity</span> (spacial), <span class="hl">Devoteam DCloud</span>, and <span class="hl">ASML</span> (semiconductors).</p>
+        <p>i'm also an <span class="hl">adversarial &amp; offensive AI enthusiast</span> — see my latest research topics and publications under <a href="#research">/research</a>.</p>
+        <div class="lang-row">
+          <span class="lang-chip">EN <span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+          <span class="lang-chip">PT <span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+          <span class="lang-chip">ES <span class="bars"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></span>
+          <span class="lang-chip">RU <span class="bars"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ———————————————————————— TRAJECTORY ———————————————————————— -->
+<section id="trajectory" class="block trajectory" data-screen-label="02 trajectory">
+  <div class="container">
+    <div class="section-head">
+      <div class="lead">
+        <span class="kicker">02 · trajectory</span>
+        <h2>the circuit <span class="slash">//</span> roles × certs</h2>
+      </div>
+      <div class="meta">
+        <div>&gt; 7 ROLES · 14 CERTS</div>
+        <div>SCROLL TO ADVANCE READ-HEAD</div>
+        <div>HOVER NODES FOR DETAIL</div>
+      </div>
+    </div>
+
+    <div class="tl-wrap">
+      <svg class="tl-svg"></svg>
+      <div class="tl-center">
+        <span class="tl-axis-label left">ROLES</span>
+        <span class="tl-axis-label right" style="top: 0">CERTS</span>
+      </div>
+
+      <!-- ROLES (newest first) -->
+      <div class="tl-roles">
+        <div class="tl-node now bracket-card">
+          <div class="date">2025 → NOW</div>
+          <h4>Lead Data Engineer</h4>
+          <div class="company">EPAM Systems \ ASML · remote</div>
+          <ul class="bullets">
+            <li>Multi-cloud Delta Sharing at GB/TB scale (Azure ↔ GCP)</li>
+            <li>Aggregated Databricks logs via K8s · OpenTelemetry · Azure IoT Hub</li>
+            <li>Debugged GCP networking: CMV VPCs, PSCs, Cloud Interconnect</li>
+          </ul>
+          <div class="tags"><span>Databricks</span><span>Unity Catalog</span><span>Azure</span><span>GCP</span><span>K8s</span><span>OTel</span></div>
+        </div>
+        <div class="tl-node">
+          <div class="date">2024 → 2025</div>
+          <h4>Data Architect</h4>
+          <div class="company">Devoteam DCloud · remote</div>
+          <ul class="bullets">
+            <li>Scalable architectures for telco, retail &amp; industry 4.0 clients</li>
+            <li>Pre-sales, PoCs, MVPs using GCP data services</li>
+            <li>Authored Technical Design docs for naming, DR, modeling</li>
+          </ul>
+          <div class="tags"><span>GCP</span><span>BigQuery</span><span>DAMA</span><span>Dataflow</span></div>
+        </div>
+        <div class="tl-node">
+          <div class="date">2023 → 2025</div>
+          <h4>Data Management Specialist</h4>
+          <div class="company">Aubay Portugal \ Beyond Gravity · Lisbon</div>
+          <ul class="bullets">
+            <li>Founded BG's Data Org on DAMA principles</li>
+            <li>Built GenAI Data Catalog with Copilot Studio + GPT</li>
+            <li>Enterprise ERD &amp; model for cloud migration</li>
+          </ul>
+          <div class="tags"><span>Azure</span><span>Copilot</span><span>GPT</span><span>ERD</span><span>DAMA</span></div>
+        </div>
+        <div class="tl-node">
+          <div class="date">2022 → 2023</div>
+          <h4>Data Engineer</h4>
+          <div class="company">Aubay Portugal \ Reckitt Benckiser · Lisbon</div>
+          <ul class="bullets">
+            <li>DataSecOps tech leader · trending IA/LLM tech PoCs</li>
+            <li>Translated legacy SQL SPs to PySpark — hours → minutes</li>
+            <li>Advised architecture on Databricks, SODA, dbt, Unravel</li>
+          </ul>
+          <div class="tags"><span>Databricks</span><span>PySpark</span><span>DataSecOps</span><span>SODA</span><span>dbt</span></div>
+        </div>
+        <div class="tl-node">
+          <div class="date">2020 → 2022</div>
+          <h4>Analyst</h4>
+          <div class="company">AES Brasil · remote</div>
+          <ul class="bullets">
+            <li>ML pipelines for wind energy, system load &amp; rain forecasts</li>
+            <li>Reduced daily manual reporting · 1 day → 4 hours</li>
+            <li>Trained AES Corp's engineers on Prefect &amp; workflow mgmt</li>
+          </ul>
+          <div class="tags"><span>Python</span><span>Prefect</span><span>MLOps</span><span>Web Scraping</span></div>
+        </div>
+        <div class="tl-node">
+          <div class="date">2020 → 2021</div>
+          <h4>AI &amp; Data Engineer</h4>
+          <div class="company">AI ROBOTS · Freelance · remote</div>
+          <ul class="bullets">
+            <li>Data Architecture design for the Health Monitoring product</li>
+            <li>Consultancy in Data Collection, Data Privacy, Cybersecurity, and Cloud Computing</li>
+          </ul>
+          <div class="tags"><span>Data Architecture</span><span>Cloud</span><span>Cybersecurity</span><span>Privacy</span></div>
+        </div>
+        <div class="tl-node">
+          <div class="date">2019 → 2020</div>
+          <h4>Postgraduate Researcher</h4>
+          <div class="company">Federal University of Paraíba · Full-time · João Pessoa</div>
+          <ul class="bullets">
+            <li>Researched autonomous mobile robots and the Multi-Agent Path Finding (MAPF) problem</li>
+            <li>Developed two new metaheuristics using Swarm and Multi-Start approaches</li>
+            <li>Applications: Robotic Warehouses, Games, Communication Networks, Autonomous Cars</li>
+          </ul>
+          <div class="tags"><span>Robotics</span><span>MAPF</span><span>Swarm</span><span>Python</span><span>Research</span></div>
+        </div>
+      </div>
+
+      <!-- CERTS (newest first, lined up roughly with eras) -->
+      <div class="tl-certs">
+        <div class="tl-cert"><div class="d">OCT 2025</div><div class="t">Databricks Certified Data Engineer <b style="color:var(--cyan-bright)">Professional</b></div><div class="issuer">DATABRICKS</div></div>
+        <div class="tl-cert"><div class="d">APR 2025</div><div class="t">Professional Cloud Database Engineer</div><div class="issuer">GOOGLE CLOUD</div></div>
+        <div class="tl-cert"><div class="d">JAN 2025</div><div class="t">SI Architect Certification</div><div class="issuer">MONGODB</div></div>
+        <div class="tl-cert"><div class="d">JAN 2025</div><div class="t">SI Associate Certification</div><div class="issuer">MONGODB</div></div>
+        <div class="tl-cert"><div class="d">NOV 2024</div><div class="t">Associate Data Practitioner</div><div class="issuer">GOOGLE CLOUD</div></div>
+        <div class="tl-cert"><div class="d">SEP 2023</div><div class="t">Prefect Associate</div><div class="issuer">PREFECT</div></div>
+        <div class="tl-cert"><div class="d">JUL 2023</div><div class="t">Databricks Certified Data Engineer Associate</div><div class="issuer">DATABRICKS</div></div>
+        <div class="tl-cert"><div class="d">MAY 2023</div><div class="t">Astronomer Certification — Apache Airflow</div><div class="issuer">ASTRONOMER</div></div>
+        <div class="tl-cert"><div class="d">MAR 2023</div><div class="t">dbt Fundamentals</div><div class="issuer">DBT LABS</div></div>
+        <div class="tl-cert"><div class="d">AUG 2020</div><div class="t">Introduction to Cybersecurity</div><div class="issuer">CISCO</div></div>
+        <div class="tl-cert"><div class="d">AUG 2020</div><div class="t">Machine Learning Scholarship Program for Microsoft Azure</div><div class="issuer">UDACITY</div></div>
+        <div class="tl-cert"><div class="d">AUG 2020</div><div class="t">DevOps Essentials Professional Certificate (DEPC)</div><div class="issuer">CERTIPROOF</div></div>
+        <div class="tl-cert"><div class="d">AUG 2020</div><div class="t">API Designer</div><div class="issuer">API ACADEMY</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ———————————————————————— STACK ———————————————————————— -->
+<section id="stack" class="block" data-screen-label="03 /tech">
+  <div class="container">
+    <div class="section-head">
+      <div class="lead">
+        <span class="kicker">03 · /tech</span>
+        <h2>the honeycomb <span class="slash">//</span> what i build with</h2>
+      </div>
+      <div class="meta">
+        <div>34 NODES · LIVE SIMULATION</div>
+        <div>DRAG · HOVER · CLICK</div>
+        <div class="hi">&gt; physics: on</div>
+      </div>
+    </div>
+
+    <div class="stack-filters">
+      <button class="chip on" data-group="all">all</button>
+      <button class="chip" data-group="cloud">cloud</button>
+      <button class="chip" data-group="data">data</button>
+      <button class="chip" data-group="ops">ops</button>
+      <button class="chip" data-group="code">code</button>
+      <button class="chip" data-group="gov">governance</button>
+      <button class="chip" data-group="ai">ai</button>
+    </div>
+
+    <div class="stack-wrap">
+      <div class="stack-canvas bracket-card">
+        <svg preserveAspectRatio="none"></svg>
+        <div class="stack-info"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ———————————————————————— PROJECTS ———————————————————————— -->
+<section id="projects" class="block" data-screen-label="04 projects">
+  <div class="container">
+    <div class="section-head">
+      <div class="lead">
+        <span class="kicker">04 · featured work</span>
+        <h2>projects <span class="slash">//</span> most recent projects</h2>
+      </div>
+      <div class="meta">
+        <div>CASE STUDIES · 2 OF N</div>
+      </div>
+    </div>
+
+    <div class="projects-grid">
+      <!-- ASML -->
+      <article class="proj bracket-card">
+        <div class="proj-head">
+          <span class="idx">PRJ.001</span>
+          <span class="when">2025 — ACTIVE</span>
+        </div>
+        <h3>Multi-Cloud Delta Sharing</h3>
+        <div class="sub">EPAM \ ASML · lead data engineer</div>
+        <div class="body">
+          Built and maintain a <b>bi-directional Delta Sharing solution</b> between Azure and GCP at GB/TB scale — syncing ASML machine-fault data into Vertex AI so fabs can detect failures and optimise diagnostics. Shipped a separate platform that aggregates Databricks logs across workspaces via <b>Kubernetes, OpenTelemetry and Azure IoT Hub</b>.
+        </div>
+        <div class="stack-tags">
+          <span>Databricks</span><span>Unity Catalog</span><span>Asset Bundles</span><span>FGA</span><span>Azure</span><span>GCP</span><span>Vertex AI</span><span>K8s</span><span>OpenTelemetry</span><span>IoT Hub</span>
+        </div>
+        <div class="metrics">
+          <div class="m"><div class="k">scale</div><div class="v">GB → TB/day</div></div>
+          <div class="m"><div class="k">clouds</div><div class="v">Azure × GCP</div></div>
+          <div class="m"><div class="k">workspaces</div><div class="v">multi-region</div></div>
+          <div class="m"><div class="k">downstream</div><div class="v">Vertex AI ML</div></div>
+        </div>
+      </article>
+
+      <!-- Reckitt -->
+      <article class="proj bracket-card">
+        <div class="proj-head">
+          <span class="idx">PRJ.002</span>
+          <span class="when">2022 — 2023</span>
+        </div>
+        <h3>DataSecOps · Legacy → Modern</h3>
+        <div class="sub">Aubay \ Reckitt Benckiser · tech leader</div>
+        <div class="body">
+          Led the <b>DataSecOps track</b> for Reckitt's migration off a legacy data platform onto the modern data stack. Ran PoCs with IA/LLMs and open-source tooling to cut cloud cost and raise data quality. Translated thousands of lines of legacy <b>SQL stored procedures into PySpark</b>, collapsing ETLs from hours to minutes, and advised the architecture team on Databricks, SODA, dbt, Unravel &amp; Acceldata adoption.
+        </div>
+        <div class="stack-tags">
+          <span>Databricks</span><span>PySpark</span><span>SQL</span><span>dbt</span><span>SODA</span><span>Unravel</span><span>Acceldata</span><span>DataSecOps</span>
+        </div>
+        <div class="metrics">
+          <div class="m"><div class="k">etl runtime</div><div class="v">hours → minutes</div></div>
+          <div class="m"><div class="k">scope</div><div class="v">legacy SPs migrated</div></div>
+          <div class="m"><div class="k">role</div><div class="v">tech leader</div></div>
+          <div class="m"><div class="k">outcome</div><div class="v">modern stack live</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ———————————————————————— CERTS (grid) ———————————————————————— -->
+<section id="certs" class="block" data-screen-label="05 certs">
+  <div class="container">
+    <div class="section-head">
+      <div class="lead">
+        <span class="kicker">05 · credentials</span>
+        <h2>certifications <span class="slash">//</span> 10+ badges, chronological</h2>
+      </div>
+      <div class="meta"><div>&gt; receipts</div></div>
+    </div>
+    <div class="cert-grid">
+      <div class="cert star bracket-card"><span class="badge">LATEST</span><div class="d">OCT 2025</div><div class="t">Databricks Certified Data Engineer Professional</div><div class="i">DATABRICKS</div></div>
+      <div class="cert"><div class="d">APR 2025</div><div class="t">Professional Cloud Database Engineer</div><div class="i">GOOGLE CLOUD</div></div>
+      <div class="cert"><div class="d">JAN 2025</div><div class="t">SI Architect</div><div class="i">MONGODB</div></div>
+      <div class="cert"><div class="d">JAN 2025</div><div class="t">SI Associate</div><div class="i">MONGODB</div></div>
+      <div class="cert"><div class="d">NOV 2024</div><div class="t">Associate Data Practitioner</div><div class="i">GOOGLE CLOUD</div></div>
+      <div class="cert"><div class="d">SEP 2023</div><div class="t">Prefect Associate</div><div class="i">PREFECT</div></div>
+      <div class="cert"><div class="d">JUL 2023</div><div class="t">Databricks Data Engineer Associate</div><div class="i">DATABRICKS</div></div>
+      <div class="cert"><div class="d">MAY 2023</div><div class="t">Apache Airflow Fundamentals</div><div class="i">ASTRONOMER</div></div>
+      <div class="cert"><div class="d">MAR 2023</div><div class="t">dbt Fundamentals</div><div class="i">DBT LABS</div></div>
+      <div class="cert"><div class="d">AUG 2020</div><div class="t">Introduction to Cybersecurity</div><div class="i">CISCO</div></div>
+      <div class="cert"><div class="d">AUG 2020</div><div class="t">Machine Learning Scholarship for Microsoft Azure</div><div class="i">UDACITY</div></div>
+      <div class="cert"><div class="d">AUG 2020</div><div class="t">DevOps Essentials Professional Certificate (DEPC)</div><div class="i">CERTIPROOF</div></div>
+      <div class="cert"><div class="d">AUG 2020</div><div class="t">API Designer</div><div class="i">API ACADEMY</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ———————————————————————— RESEARCH ———————————————————————— -->
+<section id="research" class="block" data-screen-label="06 research">
+  <div class="container">
+    <div class="section-head">
+      <div class="lead">
+        <span class="kicker">06 · research</span>
+        <h2>what's next <span class="slash">//</span> adversarial &amp; offensive AI · LLMs · GenAI</h2>
+      </div>
+      <div class="meta"><div class="hi">&gt; PhD IN PROGRESS</div></div>
+    </div>
+
+    <div class="research">
+      <div class="phd-card bracket-card">
+        <span class="status"><span class="live"></span>STATUS · IN_PROGRESS</span>
+        <h3>toward <span class="glow">adversarial &amp; offensive AI</span> · LLMs &amp; GenAI at production scale</h3>
+        <p>ongoing PhD · with the raise of LLMs and GenAI models the attack surface of modern AI still needs further investigation and standards. i'm investigating how adversarial and offensive techniques expose weak points in LLMs and GenAI systems, and what defensive posture looks like when data, models, and inference run across four cloud boundaries.</p>
+        <p class="mono" style="font-size:11px; color:var(--paper-dim); letter-spacing:.1em; margin-top: 18px;">&gt; areas · data poisoning · model evasion · LLM jailbreaking · prompt injection · supply-chain attacks · GenAI red-teaming</p>
+        <p class="mono" style="font-size:11px; color:var(--paper-dim); letter-spacing:.1em; margin:0;">&gt; thesis · currently under development</p>
+      </div>
+
+      <div>
+        <div class="bracket-label" style="margin-bottom:18px; display:block;">PUBLICATIONS · 02</div>
+        <div class="pubs-list">
+          <div class="pub">
+            <div class="d">MAR 2021</div>
+            <div class="t">Robotic Mobile Fulfillment Systems: A survey on recent developments and research opportunities</div>
+            <div class="src">Robotics and Autonomous Systems Journal</div>
+          </div>
+          <div class="pub">
+            <div class="d">SEP 2019</div>
+            <div class="t">TurtleUI: A Generic Graphical User Interface for Robot Control</div>
+            <div class="src">Latin American Robotics Symposium (LARS)</div>
+          </div>
+        </div>
+
+        <div class="bracket-label" style="margin: 32px 0 18px; display:block;">EDUCATION</div>
+        <div class="pubs-list">
+          <div class="pub"><div class="d">2024 — NOW</div><div class="t">PhD · Adversarial &amp; Offensive AI</div><div class="src">NOVA IMS — Information Management School</div></div>
+          <div class="pub"><div class="d">2019 — 2021</div><div class="t">MSc. Informatics</div><div class="src">Federal University of Paraíba (UFPB)</div></div>
+          <div class="pub"><div class="d">2016 — 2018</div><div class="t">B.Eng. Electrical Engineering</div><div class="src">Federal University of Semi-Arid Region (UFERSA)</div></div>
+          <div class="pub"><div class="d">2012 — 2015</div><div class="t">B.Sc. Applied Engineering</div><div class="src">Federal University of Semi-Arid Region (UFERSA)</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ———————————————————————— SPEAKING + WRITING ———————————————————————— -->
+<section id="voice" class="block" data-screen-label="07 voice">
+  <div class="container">
+    <div class="section-head">
+      <div class="lead">
+        <span class="kicker">07 · voice</span>
+        <h2>speaking &amp; writing <span class="slash">//</span> latest signals</h2>
+      </div>
+      <div class="meta"><div>/talks · /logs</div></div>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="bracket-label" style="margin-bottom:14px;display:block;">/TALKS</div>
+        <div class="post-list">
+          <div class="post"><div class="d">SEP 2024</div><div><div class="t">Data Engineering Foundations Program — Module 3: Data Architecture Management</div><div class="cat">SHELOVESDATA · WORKSHOP</div></div><div class="arr">→</div></div>
+          <div class="post"><div class="d">JUN 2024</div><div><div class="t">Data Engineering Foundations Program — Module 2: Intro to Data Architecture Design</div><div class="cat">SHELOVESDATA · WORKSHOP</div></div><div class="arr">→</div></div>
+          <div class="post"><div class="d">TBA</div><div><div class="t">Delta Sharing across clouds — lessons from semiconductor fabs</div><div class="cat">MEETUP · DATABRICKS</div></div><div class="arr">→</div></div>
+          <div class="post"><div class="d">TBA</div><div><div class="t">DataSecOps — adopting governance without slowing teams down</div><div class="cat">WORKSHOP · INTERNAL</div></div><div class="arr">→</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="bracket-label" style="margin-bottom:14px;display:block;">/LOGS — WRITING</div>
+        <div class="post-list">
+          <div class="post"><a class="link" href="https://medium.com/data-hackers/desmistificando-o-databricks-cap%C3%ADtulo-1-a69413186dcb" target="_blank" rel="noopener" style="display:contents;"><div class="d">2021</div><div><div class="t">Desmistificando o Databricks — Capítulo 1</div><div class="cat">MEDIUM · DATA HACKERS</div></div><div class="arr">→</div></a></div>
+          <div class="post"><a class="link" href="https://medium.com/data-science/cleaning-refactoring-and-modular-the-must-foundations-to-improve-your-python-code-and-carrer-65ef71cdb264" target="_blank" rel="noopener" style="display:contents;"><div class="d">2021</div><div><div class="t">Cleaning, Refactoring and Modular — the Must Foundations to Improve Your Python Code and Career</div><div class="cat">MEDIUM · DATA SCIENCE</div></div><div class="arr">→</div></a></div>
+          <div class="post"><a class="link" href="https://medium.com/swlh/optimize-your-machine-learning-or-big-data-learning-journey-with-these-powerful-strategies-35dc045abc9c" target="_blank" rel="noopener" style="display:contents;"><div class="d">2020</div><div><div class="t">Optimize Your Machine Learning or Big Data Learning Journey with These Powerful Strategies</div><div class="cat">MEDIUM · THE STARTUP</div></div><div class="arr">→</div></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ———————————————————————— CONNECT ———————————————————————— -->
+<section id="connect" class="block contact-block" data-screen-label="08 /connect">
+  <div class="container">
+    <div class="section-head">
+      <div class="lead">
+        <span class="kicker">08 · /connect</span>
+        <h2>let's talk <span class="slash">//</span> $ handshake --init</h2>
+      </div>
+      <div class="meta"><div class="hi">&gt; CHANNELS OPEN</div><div>GMT · REPLIES &lt; 24H</div></div>
+    </div>
+
+    <div class="terminal bracket-card" id="terminal-connect">
+      <div class="tl"><span class="prompt">ircbarros@phantom-node</span> <span class="dim">~</span> % <span class="cyan">cat</span> /contact</div>
+      <div class="tl out"><span class="mono" style="color:var(--paper-dim);">email   </span> <a class="link" href="mailto:italorenan_@hotmail.com">italorenan_@hotmail.com</a></div>
+      <div class="tl out"><span class="mono" style="color:var(--paper-dim);">phone   </span> +351 934 697 264</div>
+      <div class="tl out"><span class="mono" style="color:var(--paper-dim);">loc     </span> guarda, portugal · GMT</div>
+      <div class="tl">&nbsp;</div>
+      <div class="tl"><span class="prompt">ircbarros@phantom-node</span> <span class="dim">~</span> % <span class="cyan">ls</span> -la /channels</div>
+      <div class="tl out">drwxr-xr-x · <a class="link" href="https://www.linkedin.com/in/ircbarros/" target="_blank" rel="noopener">linkedin.com/in/ircbarros</a></div>
+      <div class="tl out">drwxr-xr-x · <a class="link" href="https://github.com/Ircbarros" target="_blank" rel="noopener">github.com/Ircbarros</a></div>
+      <div class="tl out">drwxr-xr-x · <a class="link" href="https://stackoverflow.com/users/11595480/ircbarros" target="_blank" rel="noopener">stackoverflow · ircbarros</a></div>
+      <div class="tl out">drwxr-xr-x · <a class="link" href="https://medium.com/@ircbarros" target="_blank" rel="noopener">medium.com/@ircbarros</a></div>
+      <div class="tl out">drwxr-xr-x · <a class="link" href="https://orcid.org/0000-0002-8002-5077" target="_blank" rel="noopener">orcid.org/0000-0002-8002-5077</a></div>
+      <div class="tl">&nbsp;</div>
+      <div class="tl"><span class="prompt">ircbarros@phantom-node</span> <span class="dim">~</span> % <span class="cyan">echo</span> "open to: data &amp; ai architect roles, phd collaboration, talks"</div>
+      <div class="tl out" style="color:var(--cyan-bright);">open to: data &amp; ai architect roles, phd collaboration, talks</div>
+      <div class="tl">&nbsp;</div>
+      <div class="tl"><span class="prompt">ircbarros@phantom-node</span> <span class="dim">~</span> % <span class="cursor" id="terminal-cursor"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ———————————————————————— FOOTER ———————————————————————— -->
+<footer>
+  <div class="container" style="display:flex; justify-content:space-between; align-items:center; padding: 0 40px; max-width:var(--maxw); margin:0 auto; width:100%;">
+    <div>© 2026 italo barros · all rights reserved</div>
+    <div class="rev">REV_001 · built with html · hosted on github pages</div>
+  </div>
+</footer>
+
+<!-- ———————————————————————— TWEAKS ———————————————————————— -->
+<div id="tweaks">
+  <h4>[TWEAKS]</h4>
+  <div class="row"><label>motion</label>
+    <button data-key="motion" data-val="full">full</button>
+    <button data-key="motion" data-val="low">low</button>
+  </div>
+  <div class="row"><label>accent</label>
+    <button data-key="accent" data-val="cyan">cyan</button>
+    <button data-key="accent" data-val="magenta">magenta</button>
+    <button data-key="accent" data-val="lime">lime</button>
+  </div>
+  <div class="row"><label>boot</label>
+    <button data-key="replayBoot" data-val="now">replay intro</button>
+  </div>
+  <div class="hint">first-visit loader shows once per browser · clear cache to see again</div>
+</div>
+
+<script src="js/logo.js"></script>
+<script src="js/timeline.js"></script>
+<script src="js/stack.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>
