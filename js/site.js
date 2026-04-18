@@ -245,7 +245,40 @@
     try { window.parent.postMessage({type:'__edit_mode_available'}, '*'); } catch(_){}
   }
 
-  // terminal commands in contact section (interactive typewriter)
+  // section title cyberpunk glitch — fires on scroll entry, then repeats
+  function initSectionTitleGlitch() {
+    var h2s = document.querySelectorAll('.section-head .lead h2');
+    if (!h2s.length) return;
+
+    h2s.forEach(function(h2) {
+      h2.setAttribute('data-text', h2.textContent);
+
+      function runH2Glitch() {
+        h2.classList.remove('glitching');
+        void h2.offsetWidth; // force reflow so animation restarts cleanly
+        h2.classList.add('glitching');
+        setTimeout(function() {
+          h2.classList.remove('glitching');
+          setTimeout(runH2Glitch, 6000 + Math.random() * 9000);
+        }, 600);
+      }
+
+      // first glitch fires shortly after the section scrolls into view
+      var triggered = false;
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !triggered) {
+            triggered = true;
+            obs.disconnect();
+            setTimeout(runH2Glitch, 700 + Math.random() * 500);
+          }
+        });
+      }, { threshold: 0.25 });
+      obs.observe(h2);
+    });
+  }
+
+
   function initTerminal(){
     const term = document.getElementById('terminal-connect');
     if (!term) return;
@@ -342,6 +375,7 @@
     if (window.initTimeline) window.initTimeline(document.querySelector('.tl-wrap'));
     initStack();
     initTweaks();
+    initSectionTitleGlitch();
     initTerminal();
   }
 
