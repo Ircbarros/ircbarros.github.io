@@ -200,6 +200,22 @@ section.block > .container > .section-head {
   opacity: 0;
 }
 
+/* cyberpunk logo flicker */
+@keyframes logo-flicker {
+  0%   { opacity: 1; }
+  3%   { opacity: .06; filter: none; }
+  6%   { opacity: 1;   filter: brightness(2) drop-shadow(0 0 22px rgba(61,216,255,.9)); }
+  9%   { opacity: .4;  filter: none; }
+  13%  { opacity: 1; }
+  37%  { opacity: 1; }
+  39%  { opacity: .12; filter: none; }
+  42%  { opacity: .95; filter: brightness(1.6) drop-shadow(0 0 14px rgba(61,216,255,.7)); }
+  45%  { opacity: .5;  filter: none; }
+  48%  { opacity: 1;   filter: drop-shadow(0 0 8px rgba(61,216,255,.5)); }
+  100% { opacity: 1;   filter: none; }
+}
+.logo-svg.flicker { animation: logo-flicker 1s linear forwards; }
+
 .hero h1 {
   font-size: clamp(56px, 8vw, 112px);
   font-weight: 500; letter-spacing: -.04em; line-height: .95;

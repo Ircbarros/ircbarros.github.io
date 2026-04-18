@@ -59,6 +59,15 @@
       setTimeout(() => window.spawnGlitter(glitter, 12), 2400);
       setTimeout(() => window.spawnGlitter(glitter, 8),  3400);
     }
+    // cyberpunk flicker loop — starts after assembly settles, fires randomly
+    function triggerFlicker() {
+      slot.classList.remove('flicker');
+      void slot.offsetWidth; // force reflow so animation restarts
+      slot.classList.add('flicker');
+      slot.addEventListener('animationend', () => slot.classList.remove('flicker'), { once: true });
+      setTimeout(triggerFlicker, 5000 + Math.random() * 9000);
+    }
+    setTimeout(triggerFlicker, firstVisit ? 3800 : 1800);
   }
 
   // mini mark in topbar
