@@ -19,23 +19,23 @@
     { id: 'bigquery',      label: 'bigquery',       group: 'cloud', size: 22, icon: 'googlebigquery' },
     { id: 'dataflow',      label: 'dataflow',       group: 'cloud', size: 22, icon: 'googledataflow' },
     { id: 'pubsub',        label: 'pubsub',         group: 'cloud', size: 22, icon: 'googlepubsub' },
-    { id: 'vertex',        label: 'vertex',         group: 'cloud', size: 22, icon: 'googlevertexai' },
-    { id: 'gke',           label: 'gke',            group: 'cloud', size: 22, icon: 'googlekubernetesengine' },
-    { id: 'cloudfunctions',label: 'functions',      group: 'cloud', size: 22, icon: 'googlecloudfunctions' },
+    { id: 'vertex',        label: 'vertex',         group: 'cloud', size: 22, icon: 'googlegemini' },
+    { id: 'gke',           label: 'gke',            group: 'cloud', size: 22, icon: 'kubernetes' },
+    { id: 'cloudfunctions',label: 'functions',      group: 'cloud', size: 22 },
     { id: 'gcs',           label: 'gcs',            group: 'cloud', size: 22, icon: 'googlecloudstorage' },
 
     // azure
-    { id: 'adls',        label: 'adls',       group: 'cloud', size: 22, icon: 'azuredatalakestorage' },
-    { id: 'datafactory', label: 'adf',        group: 'cloud', size: 22, icon: 'azuredatafactory' },
-    { id: 'eventhub',    label: 'event hub',  group: 'cloud', size: 22, icon: 'azureeventhubs' },
-    { id: 'iothub',      label: 'iot hub',    group: 'cloud', size: 22, icon: 'azureiotcentral' },
+    { id: 'adls',        label: 'adls',       group: 'cloud', size: 22 },
+    { id: 'datafactory', label: 'adf',        group: 'cloud', size: 22 },
+    { id: 'eventhub',    label: 'event hub',  group: 'cloud', size: 22 },
+    { id: 'iothub',      label: 'iot hub',    group: 'cloud', size: 22 },
     { id: 'powerbi',     label: 'powerbi',    group: 'cloud', size: 22, icon: 'powerbi' },
-    { id: 'copilot',     label: 'copilot',    group: 'cloud', size: 22, icon: 'microsoftcopilot' },
+    { id: 'copilot',     label: 'copilot',    group: 'cloud', size: 22, icon: 'githubcopilot' },
 
     // data
     { id: 'databricks', label: 'databricks', group: 'data', size: 26, icon: 'databricks' },
     { id: 'spark',      label: 'spark',      group: 'data', size: 24, icon: 'apachespark' },
-    { id: 'delta',      label: 'delta',      group: 'data', size: 22, icon: 'deltalake' },
+    { id: 'delta',      label: 'delta',      group: 'data', size: 22 },
     { id: 'unity',      label: 'unity cat',  group: 'data', size: 22, icon: 'databricks' },
     { id: 'dbt',        label: 'dbt',        group: 'data', size: 22, icon: 'dbt' },
     { id: 'airflow',    label: 'airflow',    group: 'data', size: 22, icon: 'apacheairflow' },
@@ -141,6 +141,13 @@
         <feGaussianBlur stdDeviation="2" result="b"/>
         <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
       </filter>
+      <filter id="icon-cyan" color-interpolation-filters="sRGB" x="0%" y="0%" width="100%" height="100%">
+        <feColorMatrix type="matrix"
+          values="0 0 0 0 0.239
+                  0 0 0 0 0.847
+                  0 0 0 0 1
+                  0 0 0 1 0"/>
+      </filter>
     `;
     svgRoot.appendChild(defs);
 
@@ -205,11 +212,12 @@
       if (n.icon && !n.me) {
         const iconSize = n.hub ? 14 : 12;
         const img = document.createElementNS(NS, 'image');
-        img.setAttribute('href', `https://cdn.simpleicons.org/${n.icon}/3DD8FF`);
+        img.setAttribute('href', `https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${n.icon}.svg`);
         img.setAttribute('width', iconSize);
         img.setAttribute('height', iconSize);
         img.setAttribute('x', -iconSize / 2);
         img.setAttribute('y', n.hub ? -(iconSize + 3) : -(iconSize / 2 + 4));
+        img.setAttribute('filter', 'url(#icon-cyan)');
         img.setAttribute('style', 'pointer-events:none');
         g.appendChild(img);
       }
