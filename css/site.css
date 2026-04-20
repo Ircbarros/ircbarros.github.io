@@ -24,13 +24,13 @@
 
 * , *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-html { scroll-behavior: smooth; background: var(--ink); color: var(--paper); overflow-x: hidden; }
+html { scroll-behavior: smooth; background: var(--ink); color: var(--paper); }
 body {
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.6;
   min-height: 100vh;
-  overflow-x: visible;
+  overflow-x: clip;
   background:
     radial-gradient(1200px 600px at 80% -10%, rgba(61,216,255,.08), transparent 60%),
     radial-gradient(900px 500px at 10% 110%, rgba(30,58,95,.25), transparent 60%),
