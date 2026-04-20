@@ -26,7 +26,7 @@
 
     // azure
     { id: 'adls',        label: 'adls',       group: 'cloud', size: 22, icon: 'microsoftazure' },
-    { id: 'datafactory', label: 'adf',        group: 'cloud', size: 22 },
+    { id: 'datafactory', label: 'adf',        group: 'cloud', size: 22, icon: 'microsoftazure' },
     { id: 'eventhub',    label: 'event hub',  group: 'cloud', size: 22, icon: 'microsoftazure' },
     { id: 'iothub',      label: 'iot hub',    group: 'cloud', size: 22, icon: 'microsoftazure' },
     { id: 'powerbi',     label: 'powerbi',    group: 'cloud', size: 22, icon: 'powerbi' },
@@ -208,7 +208,7 @@
       if (n.me) poly.setAttribute('filter', 'url(#hex-glow)');
       g.appendChild(poly);
 
-      // icon: render above label for non-me nodes that have an icon slug
+      // icon: centered inside the hexagon
       if (n.icon && !n.me) {
         const iconSize = n.hub ? 14 : 12;
         const img = document.createElementNS(NS, 'image');
@@ -216,7 +216,9 @@
         img.setAttribute('width', iconSize);
         img.setAttribute('height', iconSize);
         img.setAttribute('x', -iconSize / 2);
-        img.setAttribute('y', n.hub ? -(iconSize + 3) : -(iconSize / 2 + 4));
+        // for hubs (which also render a text label below): shift icon up slightly
+        // for leaf nodes: perfectly centered
+        img.setAttribute('y', n.hub ? -(iconSize / 2 + 6) : -iconSize / 2);
         img.setAttribute('filter', 'url(#icon-cyan)');
         img.setAttribute('style', 'pointer-events:none');
         g.appendChild(img);
@@ -226,10 +228,10 @@
       if (n.me || n.hub || !n.icon) {
         const txt = document.createElementNS(NS, 'text');
         txt.textContent = n.label;
-        // shift text down when there's an icon (hub nodes only reach here)
+        // for hubs with icon: shift text down to sit below the centered icon
         if (n.icon && !n.me) {
-          const offset = n.hub ? 6 : 5;
-          txt.setAttribute('dy', offset);
+          const iconSize = n.hub ? 14 : 12;
+          txt.setAttribute('dy', iconSize / 2 + 2);
         }
         g.appendChild(txt);
       }
