@@ -30,7 +30,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
   background:
     radial-gradient(1200px 600px at 80% -10%, rgba(61,216,255,.08), transparent 60%),
     radial-gradient(900px 500px at 10% 110%, rgba(30,58,95,.25), transparent 60%),
