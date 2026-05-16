@@ -76,9 +76,9 @@
     { id: 'langchain',   label: 'langchain',   group: 'ai', size: 22, icon: 'langchain' },
     { id: 'rag',         label: 'rag',         group: 'ai', size: 22 },
     { id: 'mlflow',      label: 'mlflow',      group: 'ai', size: 22, icon: 'mlflow' },
-    { id: 'vectorstore', label: 'vector store',group: 'ai', size: 22 },
-    { id: 'embeddings',  label: 'embeddings',  group: 'ai', size: 22 },
-    { id: 'prompteng',   label: 'prompt eng',  group: 'ai', size: 22 },
+    { id: 'vectorstore', label: 'v.store',     group: 'ai', size: 22 },
+    { id: 'embeddings',  label: 'embed',       group: 'ai', size: 22 },
+    { id: 'prompteng',   label: 'prompt',      group: 'ai', size: 22 },
   ];
 
   // edges (id pairs)
@@ -395,6 +395,11 @@
       mlops:         { t: 'MLOPS', d: 'ML lifecycle, model registry, retraining pipelines', years: '2y', proj: 'AES Brasil · BG' },
       datasecops:    { t: 'DATASECOPS', d: 'Data security posture, shift-left governance', years: '2y', proj: 'Reckitt · ASML' },
       dama:          { t: 'DAMA', d: 'Enterprise data governance framework', years: '2y', proj: 'BG · Devoteam' },
+      rag:           { t: 'RAG', d: 'Retrieval-Augmented Generation pipelines', years: '1y', proj: 'research' },
+      mlflow:        { t: 'MLFLOW', d: 'LLM experiment tracking & model registry', years: '1y', proj: 'research' },
+      vectorstore:   { t: 'VECTOR STORE', d: 'Embedding storage for semantic retrieval', years: '1y', proj: 'research' },
+      embeddings:    { t: 'EMBEDDINGS', d: 'Dense vector representations for similarity search', years: '1y', proj: 'research' },
+      prompteng:     { t: 'PROMPT ENGINEERING', d: 'Systematic prompt design & optimisation', years: '2y', proj: 'daily' },
     };
     function showInfo(id) {
       if (!infoEl) return;
