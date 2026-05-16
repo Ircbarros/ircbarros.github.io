@@ -66,14 +66,19 @@
     { id: 'mlops',      label: 'mlops',      group: 'gov', size: 22 },
 
     // ai
-    { id: 'robotics',  label: 'robotics',  group: 'ai', size: 22 },
-    { id: 'claude',    label: 'claude',    group: 'ai', size: 22, icon: 'anthropic' },
-    { id: 'llms',      label: 'llms',      group: 'ai', size: 22 },
-    { id: 'genai',     label: 'genai',     group: 'ai', size: 22 },
-    { id: 'mem0',      label: 'mem0',      group: 'ai', size: 22 },
-    { id: 'qdrant',    label: 'qdrant',    group: 'ai', size: 22, icon: 'qdrant' },
-    { id: 'langfuse',  label: 'langfuse',  group: 'ai', size: 22, icon: 'langchain' },
-    { id: 'langchain', label: 'langchain', group: 'ai', size: 22, icon: 'langchain' },
+    { id: 'robotics',    label: 'robotics',    group: 'ai', size: 22 },
+    { id: 'claude',      label: 'claude',      group: 'ai', size: 22, icon: 'anthropic' },
+    { id: 'llms',        label: 'llms',        group: 'ai', size: 22 },
+    { id: 'genai',       label: 'genai',       group: 'ai', size: 22 },
+    { id: 'mem0',        label: 'mem0',        group: 'ai', size: 22 },
+    { id: 'qdrant',      label: 'qdrant',      group: 'ai', size: 22, icon: 'qdrant' },
+    { id: 'langfuse',    label: 'langfuse',    group: 'ai', size: 22, icon: 'langchain' },
+    { id: 'langchain',   label: 'langchain',   group: 'ai', size: 22, icon: 'langchain' },
+    { id: 'rag',         label: 'rag',         group: 'ai', size: 22 },
+    { id: 'mlflow',      label: 'mlflow',      group: 'ai', size: 22, icon: 'mlflow' },
+    { id: 'vectorstore', label: 'vector store',group: 'ai', size: 22 },
+    { id: 'embeddings',  label: 'embeddings',  group: 'ai', size: 22 },
+    { id: 'prompteng',   label: 'prompt eng',  group: 'ai', size: 22 },
   ];
 
   // edges (id pairs)
@@ -94,6 +99,7 @@
     ['gov','dama'],['gov','datasecops'],['gov','mlops'],
     // ai
     ['ai','robotics'],['ai','claude'],['ai','llms'],['ai','genai'],['ai','mem0'],['ai','qdrant'],['ai','langfuse'],['ai','langchain'],
+    ['ai','rag'],['ai','mlflow'],['ai','vectorstore'],['ai','embeddings'],['ai','prompteng'],
     // cross-links (real relationships)
     ['databricks','spark'],['databricks','delta'],['databricks','unity'],
     ['azure','databricks'],['gcp','databricks'],
@@ -115,6 +121,11 @@
     ['mlops','databricks'],['mlops','python'],
     ['nginx','k8s'],
     ['spark','sql'],
+    // GenAI cert cross-links
+    ['rag','vectorstore'],['rag','embeddings'],['rag','llms'],['rag','langchain'],
+    ['embeddings','vectorstore'],['prompteng','llms'],
+    ['mlflow','databricks'],
+    ['qdrant','vectorstore'],
   ];
 
   function hexPoints(size) {
